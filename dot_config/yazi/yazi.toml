@@ -1,0 +1,23 @@
+[opener]
+# edit = [
+# 	{ run = 'subl "$@"', desc = "Edit with Sublime", orphan = true },
+# ]
+play = [
+	{ run = 'vlc "$@"', orphan = true },
+]
+open = [
+	{ run = 'xdg-open "$@"', desc = "Open", orphan = true },
+]
+# install = [
+# 	{ run = 'mullvad-exclude doas nala install "$@"', desc = "Install", block = true, orphan = true},
+# ]
+[open]
+prepend_rules = [
+	{ name = "*.html", use = [ "open", "edit" ] },
+#	{ name = "*.deb", use = "install" },
+]
+[plugin]
+prepend_previewers = [
+  { name = "*.md", run = "glow" },
+#  { name = "*/", run = "eza-preview" }
+]

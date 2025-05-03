@@ -1,0 +1,80 @@
+theme = "catppuccin_mocha"
+
+[editor]
+#These ones may not be needes since autodetection should cover them
+true-color = true
+undercurl = true
+color-modes = true
+
+# These are already the defaults
+auto-completion = true
+auto-format = true
+
+# Trying these ones out
+popup-border = "all"
+# line-number = "relative"
+cursorline = true
+
+#text-wdith stuff
+text-width = 80 # Alreadt default
+rulers = [80] # None by default
+
+indent-heuristic = "tree-sitter" # Hybrid by default which should apply a fallback. Not sure why I'd resort to just tree-sitter
+
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "info" # warning"
+other-lines = "warning"
+
+# Default block for all.
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false # ignore hidden files turned off
+
+# Defaults to none. This will allow better distinction if needed
+[editor.whitespace.render]
+space = "none"
+tab = "none"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = "↩ "
+
+[editor.lsp]
+display-messages = true # trying out
+display-inlay-hints = true
+
+# For helix-wezterm (which doesn't work)
+# [keys.normal.space.","]
+# b = ":sh helix-wezterm.sh blame"
+# c = ":sh helix-wezterm.sh check"
+# e = ":sh helix-wezterm.sh explorer"
+# g = ":sh helix-wezterm.sh lazygit"
+# o = ":sh helix-wezterm.sh open"
+# q = ":sh helix-wezterm.sh query"
+# r = ":sh helix-wezterm.sh run"
+# s = ":sh helix-wezterm.sh slumber"
+# m = ":sh helix-wezterm.sh mock"
+# n = ":sh helix-wezterm.sh navi"
+# p = ":sh helix-wezterm.sh present"
+# t = ":sh helix-wezterm.sh test"
+#
+# [keys.select.";"]
+# a = [
+#     "yank_to_clipboard",
+#     ":sh helix-wezterm.sh ai"
+# ]
+
+# Key to Toggle inlay hints
+[keys.normal.space.t]
+i = [
+    ":toggle lsp.display-inlay-hints"
+]

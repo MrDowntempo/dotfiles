@@ -1,0 +1,77 @@
+# ========================================
+# Markdown -------------------------------
+# ========================================
+
+[[language]]
+name = "markdown"
+# dprint not currently installed or configured
+# formatter = { command = "dprint", args = ["fmt", "--stdin", "md"]}
+text-width = 80
+soft-wrap.enable = true
+soft-wrap.wrap-at-text-width = true
+indent = { tab-width = 4, unit = "    " }
+language-servers = ["marksman"]
+# formatter = { command = 'prettier', args = [
+#   "--parser",
+#   "markdown",
+#   "--prose-wrap",
+#   "never", # <always|never|preserve>
+# ] }
+auto-format = true
+
+# # For Ltex-ls-plus (which I don't have installed yet)
+# [language-server.ltex-ls-plus.config]
+# ltex.diagnosticSeverity = "warning"
+# ltex.language = "en-GB"
+# ltex.disabledRules = { "en-US" = ["PROFANITY"], "en-GB" = ["PROFANITY"] }
+# ltex.dictionary = { "en-US" = ["builtin"], "en-GB" = ["builtin"] }
+
+# ========================================
+# Python 🐍-------------------------------
+# ========================================
+
+[[language]]
+name = "python"
+language-id = "python"
+roots = ["pyproject.toml", ".git", ".jj", ".venv/"]
+language-servers = ["ruff", "basedpyright"]
+auto-format = true
+formatter = { command = "uvx", args = ["sh", "-c", "ruff check --fix - | ruff format -"] }
+file-types = ["py", "ipynb"]
+comment-token = "#"
+shebangs = ["python"]
+
+[language-server.basedpyright]
+command = "uv"
+args = ["run", "basedpyright-langserver", "--stdio"]
+
+[language-server.basedpyright.config]
+autoSearchPaths = true
+typeCheckingMode = "standard"
+diagnosticMode = "openFilesOnly"
+autoImportCompletions = true
+
+[language-server.ruff]
+command = "uvx"
+args = ["ruff","server", "--preview"] # --preview ?
+environment = { "RUFF_TRACE" = "messages" }
+
+[language-server.ruff.config.settings]
+lineLength = 80
+logLevel = "debug"
+# configuration = "~/.config/ruff/ruff.toml" # I don't have this yet
+
+[language-server.ruff.config.settings.lint]
+select = ["E", "F", "W", "B", "I", "RUF", "N", "LOG", "ERA", "W", "D", "UP", "ANN", "ASYNC", "S", "RET", "TCH", "ARG", "PTH", "DOC"]
+preview = true
+
+[language-server.ruff.config.settings.format]
+preview = true
+quote-style = "double"
+docstring-code-format = true
+indent-style = "space"
+
+# Not sure about this
+# [language-server.pylsp.config.pylsp]
+# plugins.ruff.enabled = true
+# plugins.black.enabled = false

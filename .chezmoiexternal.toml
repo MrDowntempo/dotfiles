@@ -1,0 +1,117 @@
+# ================ FONTS ================
+
+# OxProto
+[".local/share/fonts/0xProto/0xProto-Regular.otf"]
+  type = "file"
+  url = "https://github.com/0xType/0xProto/raw/main/fonts/0xProto-Regular.otf"
+  refreshPeriod = "336h" # 2 weeks
+
+[".local/share/fonts/0xProto/0xProto-Bold.otf"]
+  type = "file"
+  url = "https://github.com/0xType/0xProto/raw/main/fonts/0xProto-Bold.otf"
+  refreshPeriod = "336h" # 2 weeks
+
+[".local/share/fonts/0xProto/0xProto-Italic.otf"]
+  type = "file"
+  url = "https://github.com/0xType/0xProto/raw/main/fonts/0xProto-Italic.otf"
+  refreshPeriod = "336h" # 2 weeks
+
+# Anonymous Pro
+[".local/share/fonts/AnonymousPro/Anonymous Pro.ttf"]
+  type = "archive-file"
+  url = "https://www.marksimonson.com/assets/content/fonts/AnonymousPro-1_002.zip"
+  path = "AnonymousPro-1.002.001/Anonymous Pro.ttf"
+
+[".local/share/fonts/AnonymousPro/Anonymous Pro B.ttf"]
+  type = "archive-file"
+  url = "https://www.marksimonson.com/assets/content/fonts/AnonymousPro-1_002.zip"
+  path = "AnonymousPro-1.002.001/Anonymous Pro B.ttf"
+
+[".local/share/fonts/AnonymousPro/Anonymous Pro I.ttf"]
+  type = "archive-file"
+  url = "https://www.marksimonson.com/assets/content/fonts/AnonymousPro-1_002.zip"
+  path = "AnonymousPro-1.002.001/Anonymous Pro I.ttf"
+
+[".local/share/fonts/AnonymousPro/Anonymous Pro BI.ttf"]
+  type = "archive-file"
+  url = "https://www.marksimonson.com/assets/content/fonts/AnonymousPro-1_002.zip"
+  path = "AnonymousPro-1.002.001/Anonymous Pro BI.ttf"
+
+# Courier Prime
+# ! No refresh period since this appears to never update
+[".local/share/fonts/Courier Prime/Courier Prime.ttf"]
+  type = "archive-file"
+  url = "https://quoteunquoteapps.com/courierprime/downloads/courier-prime.zip"
+  path = "Courier Prime/Courier Prime.ttf"
+
+[".local/share/fonts/Courier Prime/Courier Prime Bold.ttf"]
+  type = "archive-file"
+  url = "https://quoteunquoteapps.com/courierprime/downloads/courier-prime.zip"
+  path = "Courier Prime/Courier Prime Bold.ttf"
+
+[".local/share/fonts/Courier Prime/Courier Prime Italic.ttf"]
+  type = "archive-file"
+  url = "https://quoteunquoteapps.com/courierprime/downloads/courier-prime.zip"
+  path = "Courier Prime/Courier Prime Italic.ttf"
+
+[".local/share/fonts/Courier Prime/Courier Prime Bold Italic.ttf"]
+  type = "archive-file"
+  url = "https://quoteunquoteapps.com/courierprime/downloads/courier-prime.zip"
+  path = "Courier Prime/Courier Prime Bold Italic.ttf"
+
+# Cozette
+[".local/share/fonts/cozette.otb"]
+  type = "file"
+  url = "https://github.com/slavfox/Cozette/releases/latest/download/cozette.otb"
+  refreshPeriod = "336h" # 2 weeks
+  
+# Inter
+# ! These are not always up to date since they reference version 4.1. I've yet to find a better URL !
+[".local/share/fonts/Inter/Inter.ttc"]
+  type = "archive-file"
+  url = "https://github.com/rsms/inter/releases/download/v4.1/Inter-4.1.zip"
+  path = "Inter.ttc"
+
+[".local/share/fonts/Inter/InterVariable.ttf"]
+  type = "archive-file"
+  url = "https://github.com/rsms/inter/releases/download/v4.1/Inter-4.1.zip"
+  path = "InterVariable.ttf"
+
+[".local/share/fonts/Inter/InterVariable-Italic.ttf"]
+  type = "archive-file"
+  url = "https://github.com/rsms/inter/releases/download/v4.1/Inter-4.1.zip"
+  path = "InterVariable-Italic.ttf"
+
+# Atkinson Hyperlegible Next
+# Yet to locate directly
+
+# OpenTTD-Sans
+[".local/share/fonts/OpenTTD-Sans.ttf"]
+  type = "file"
+  url = "https://github.com/zephyris/openttd-ttf/raw/refs/heads/main/openttd-sans/OpenTTD-Sans.ttf"
+  refreshPeriod = "336h" # 2 weeks
+
+# Symbols Nerd Font
+[".local/share/fonts/NerdFontsSymbolsOnly/SymbolsNerdFont-Regular.ttf"]
+  type = "file"
+  url = "https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/NerdFontsSymbolsOnly/SymbolsNerdFont-Regular.ttf"
+  refreshPeriod = "336h" # 2 weeks
+
+[".local/share/fonts/NerdFontsSymbolsOnly/SymbolsNerdFontMono-Regular.ttf"]
+  type = "file"
+  url = "https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/NerdFontsSymbolsOnly/SymbolsNerdFontMono-Regular.ttf"
+  refreshPeriod = "336h" # 2 weeks
+
+# ================================================== CATPPUCCIN ==========================================================================
+
+# batcat
+[".config/bat/themes/Catppuccin Mocha.tmTheme"]
+  type = "file"
+  url = "https://github.com/catppuccin/bat/raw/main/themes/Catppuccin Mocha.tmTheme"
+  refreshPeriod = "336h" # 2 weeks
+
+# qbittorent
+[".config/qBittorrent/catppuccin-mocha.qbtheme"]
+  type = "file"
+  url = "https://github.com/catppuccin/qbittorrent/releases/latest/download/catppuccin-mocha.qbtheme"
+  refreshPeriod = "336h" # 2 weeks

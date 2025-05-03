@@ -1,0 +1,292 @@
+# Final folder
+directory: ~/Music/
+# asciify_paths: yes # Replace should cover most issues
+
+original_date: no # no by default. Which is actually fine since there's 2 tags for dates. But I need to setup BeetsYearFixer
+ui:
+  color: yes
+  length_diff_thresh: 5.0 # Default was 10. Now only takes 5 secs difference to turn red
+import:
+  reflink: auto
+  # Preferred language precedence
+  languages: en jp es
+  log: ~/Music/beetlog.txt
+  timid: yes
+aunique:
+  # The default identifiers are albumartist album
+  # the default disambiguators are albumtype year label catalognum albumdisambig releasegroupdisambig
+  keys: albumartist album
+  disambiguators: albumdisambig albumtype country media year label catalognum releasegroupdisambig format bitdepth samplerate
+  bracket: '[]'
+plugins: albumtypes badfiles discogs duplicates chroma edit fetchart fish ftintitle info lastgenre listenbrainz lyrics mbsync missing replaygain scrub substitute the web zero
+# fromfilename
+
+# Can't use autobpm yet because no librosa on Debian. Would need to reinstall beets with pip(x)/uv
+# Lyrics will need some API keys and setup (just bing for translation)
+# ParentWork should be considered when I steart importing classical
+# https://beets.readthedocs.io/en/stable/plugins/parentwork.html
+# Rewrite and Advanced Rewrite and/or Substitute should be considered later for Canonization
+# https://beets.readthedocs.io/en/stable/plugins/rewrite.html
+# https://beets.readthedocs.io/en/stable/plugins/substitute.html
+# Types miiiiiiight be useful for ratings (and year?) we'll see later
+# https://beets.readthedocs.io/en/stable/plugins/types.html
+
+# badfiles needs some config or extra setup
+
+# duplicates:
+# checksum_command: b3sum --quiet {file}
+
+# The edit plugin lets you modify music metadata using your favorite text editor.
+edit:
+  albumfields: album albumartist original_year year
+fetchart:
+  auto: yes
+  cautious: no
+  high_resolution: yes
+  maxwidth: 3000
+  minwidth: 300
+  sources: filesystem coverart itunes amazon albumart lastfm fanarttv
+  lastfm_key: e89cc484255e80a68cb91c6d110661f8
+  fanarttv_key: 1200ce3aef904c5a71fd02392fef1b05
+  store_source: yes
+embedart:
+  auto: no # Saving space by not embedding images by default
+  maxwidth: 1200 # Some programs won't use bigger images than 1200
+  quality: 70
+  remove_art_file: no # no is default, but better safe than sorry
+zero:
+  fields: images # Just so I don't have any embedded art
+lastgenre:
+  auto: yes
+  canonical: no # custom whitelist works better for my needs currently
+  force: yes
+  prefer_specific: yes
+  source: track # setting to track uses both album and track level
+#    whitelist: mygenres.txt
+
+listenbrainz:
+  token: 50f8206d-b585-4628-9882-67e7e0752507
+  username: MrDowntempo
+lyrics:
+  auto: yes
+  synced: yes
+discogs:
+  user_token: HjdtypsDPrJVGBxvsRofKFamHJclRPSlPBurYZxC
+  index_tracks: yes
+  append_style_genre: False # I'm using lastgenre for genres
+scrub:
+  auto: no # yes is default.
+replaygain:
+  auto: yes
+  backend: ffmpeg # External tools don't have many if any advantages
+  overwrite: yes # Not exactly what it sounds like
+  peak: "true" # Will cost performance but probably worth it
+the:
+  strip: yes # I'm only using this for artists
+substitute:
+  .*10.?000 maniacs.*: 10000 Maniacs
+  .*19.+5 collective.*: 19 Point 5 Collective
+  .*2pac.*: 2Pac
+  .*makaveli.*: 2Pac
+  .*AC.?DC.*: ACDC
+  .*aliz.{1}e: Alizee
+  .*allen toussaint.*: Allen Toussaint
+  .*aurora.*: AURORA
+  .*babymetal.*: BABYMETAL
+  .*b.{0,2}b.*king.*: BB King
+  .*b.{1}la fleck.*: Bela Fleck
+  .*beatles.*: Beatles
+  .*beth gibbons.*: Beth Gibbons
+  .*bill evans.*: Bill Evans
+  .*bj.{1}rk.*: Bjork
+  .*black dog.*: Black Dog
+  .*blackpink.*: BLACKPINK
+  .*blue.{2}yster cult.*: Blue Oyster Cult
+  .*boney m.*: Boney M
+  .*brad mehldau.*: Brad Mehldau
+  .*buddy rich.*: Buddy Rich
+  .*cal tjader.*: Cal Tjader
+  .*c.{0,2}w.*mccall: CW McCall
+  .*dave brubeck.*: Dave Brubeck
+  .*david bowie.*: David Bowie
+  .*dave matthews.*: Dave Matthews
+  .*david byrne.*: David Byrne
+  .*d.{0,2}c.*lacroix.*: DC Lacroix
+  .*demons.*wizards.*: Demons and Wizards
+  .*dinosaur jr.*: Dinosaur Jr
+  .*dire strait.*: Dire Straits
+  .*dj spooky.*: DJ Spooky
+  .*dolly parton.*: Dolly Parton
+  .*dolores o.?riordan.*: Dolores O'Riordan
+  dr.{1,2}dre.*: Dr Dre
+  .*d.{0,4}r.{1,2}john.*: Dr John
+  .*dzihan.*kamien.*: dZihan and Kamien
+  .*ed sheeran.*: Ed Sheeran
+  .*expos.*: Expose
+  .*fieldy.?s dreams.*: Fieldy's Dreams
+  .*flaming lips.*: Flaming Lips
+  .*gillian welch.*: Gillian Welch
+  .*glen campbel.*: Glen Campbell
+  .*gorillaz.*: Gorillaz
+  .*green jell.{1,2}.*: Green Jelly
+  .*gregg allman.*: Gregg Allman
+  .*gr.{2}p x: Group X
+  .*guns n.{1,2}roses: Guns N Roses
+  .*hall.*oates.*: Hall and Oates
+  .*hope sandoval.*: Hope Sandoval
+  .*imagine dragons.*: Imagine Dragons
+  .*jimi hendrix.*: Jimi Hendrix
+  .*magnolia electric co.*: Magnolia Electric Co
+  .*m.{1}neskin: Maneskin
+  .*martin l.{1,2}gore: Martin L Gore
+  .*microphones.*: Microphones
+  .*Mot.{1}rhead.*: Motorhead
+  .*mugwumps: Mamas & the Papas
+  .*offspring.*: Offspring
+  .*page.*plant.*: Led Zeppelin
+  .*lennon.*mccartney.*: Beatles
+  .*lorde.*: Lorde
+  .*jools holland.*: Jools Holland
+  .*knower.*: KNOWER
+  .*levon helm.*: Levon Helm
+  .*louis cole.*: Louis Cole
+  .*louis prima.*: Louis Prima
+  .*les claypool.*: Les Claypool
+  .*macklemore.*: Macklemore
+  .*metallica.*: Metallica
+  .*method man.*redman.*: Method Man and Redman
+  .*michael bubl.*: Michael Buble
+  .*m.{1}tley cr.{1}e.*: Motley Crue
+  .*mountain goats.*: The Mountain Goats
+  .*mr.{1,2}bungle.*: Mr Bungle
+  .*nancy sinatra.*: Nancy Sinatra
+  .*neil young.*: Neil Young
+  .*neko case.*: Neko Case
+  .*nick cave.*bad seeds.*: Nick Cave and the Bad Seeds
+  .*nine inch nails.*: Nine Inch Nails
+  .*notorious b.?i.?g.*: Notorious BIG
+  .*nx zero.*: NX Zero
+  .*pickin.{1,2}on project: Pickin' On Project
+  .*po.{1,2}girl.*: Po Girl
+  .*richard cheese.*: Richard Cheese
+  .*linda thompson.*: Linda Thompson
+  .*roxy music.*: Roxy Music
+  .*r.{1}yksopp.*: Royksopp
+  .*run the jewels.*: Run the Jewels
+  .*scarlett johansson.*: Scarlett Johansson
+  .*sigur.*r.{1}s.*: Sigur Ros
+  .*simon.*garfunkel.*: Simon and Garfunkel
+  .*skip.*spence.*: Skip Spence
+  .*souleye.*: SoulEye
+  .*spi.{1}al tap.*: Spinal Tap
+  .*stevie ray vaughan.*: Stevie Ray Vaughan
+  .*sweet emma.*: Sweet Emma
+  .*the stooges.*: Stooges
+  .*thelonious monk.*: Thelonious Monk
+  .*tolkien ensemble.*: Tolkien Ensemble
+  .*tom petty.*: Tom Petty
+  .*tom waits.*: Tom Waits
+  .*vangelis.*: Vangelis
+  .*velvet underground.*: Velvet Underground
+  .*warning.*: Warning
+  .*warren zevon.*: Warren Zevon
+  .*weird al.*: Weird Al
+  .*wesley willis.*: Wesley Willis
+  .*white stripes.*: White Stripes
+  # Special cases --- Soundtracks etc.
+  .*adam skorupa.*: Soundtracks
+  allister brimble: Soundtracks
+  alexander brandon: Soundtracks # For now. Might move to his own
+  amos roddy: Soundtracks
+  .*angelo badalamenti.*: Soundtracks
+  aperture science.*: Soundtracks
+  aram shahbazians.*: Soundtracks
+  .*Arnaud Roy.*: Soundtracks
+  .*ch.*barth.*: Soundtracks # Rama Soundtrack
+  chris remo: Soundtracks
+  cliff martinez.*: Soundtracks
+  .*bernard herrmann.*: Soundtracks # Bernard Herrmann (need to investigate if I get any non-soundtracks from him)
+  .*dabu.*swerwer.*: Soundtracks # Dwarf Fortress Soundtracks which should technically be Various Artists
+  ennio morricone: Soundtracks
+  eric brosius: Soundtracks
+  floex: Soundtracks
+  .*francisco calvelo.*: Soundtracks # Make sure BACH doesn't 'steal' this one :) But maybe we'll change that when I do classical. Pirates Gold OST also uses Bach
+  .*hans zimmer.*: Soundtracks
+  .*hirokazu tanaka.*: Soundtracks
+  hyperduck.*: Soundtracks
+  imagitec.*: Soundtracks
+  jerry berlongieri: Soundtracks
+  jesper kyd.*: Soundtracks
+  jesse harlin.*: Soundtracks
+  joseph trapanese: Soundtracks
+  justin.{1,4}bell.*: Soundtracks
+  julian colbus.*: Soundtracks
+  kan.{1,4}gao: Soundtracks
+  karel antonin: Soundtracks
+  .*kazumi totaka.*: Soundtracks #  Kazumi Totaka, Toru Minegishi, Manaka Tominaga, Shiho Fujii, Kenta Nagata, Mahito Yokota, Shinobu Tanaka, Ryo Nagamatsu (Possible consolidate with one of these)
+  kirill pokrovsky.*: Soundtracks
+  lee jackson: Soundtracks
+  louisf: Soundtracks
+  .*ludowic: Soundtracks
+  .*nathan.*pinard: Soundtracks
+  makeup.*vanity set: Soundtracks
+  matthew murphy: Soundtracks
+  michael bross: Soundtracks
+  michael hoenig: Soundtracks
+  .*michael salvatori.*: Soundtracks
+  mick gordon: Soundtracks
+  nervous_testpilot: Soundtracks
+  .*nick stubblefield: Soundtracks
+  palm pioneer: Soundtracks
+  power glove: Soundtracks
+  .*przybyłowicz.*adamczyk.*morgan: Soundtracks
+  principle.*design: Soundtracks
+  .*ravin.*visan.*: Compilations # Buddha-Bar compilations
+  .*roland rizzo.*: Soundtracks # Check for Bach
+  soichi terada: Soundtracks
+  .*sue kasper.*: Soundtracks
+  .*tim follin.*: Soundtracks
+  tom.{3}dvo.{2}k: Soundtracks
+  .*velasco.*dikiciyan: Soundtracks
+  xorcist: Soundtracks
+  .*yuzo koshiro.*: Soundtracks
+  # Symphonies and Orchestras
+  tokyo.*philharmonic orchestra: Tokyo City Philharmonic Orchestra # There is a seaparate older more famous Tokyo Philharmonic Orchestra, but all my content is from the City Orchestra. I WILL NEED TO CORRECT THIS IN TAGS TOO! But tripple check first!
+  tokyo memorial.*: Tokyo Symphony Orchestra # THIS NEEDS TAG CORRECTION TOO!
+  # Special ones I need to be EXTRA careful with
+  ^heart .*: Heart # I worry this could still be too generic
+  ^O.?A.?R.?: OAR
+  ^R.?E.?M.?: REM
+  ^T.{1}t.{1}: Tete
+  ^.{0,3}t.{2}sto: Tiesto
+# Musicbrainz options
+musicbrainz:
+  external_ids:
+    discogs: yes
+    spotify: yes
+    bandcamp: yes
+match:
+  ignore_video_tracks: no # required for a couple concert DVDs
+  # Add these tags when searching musicbrainz
+  # extra_tags: [year]
+# albumtypes:
+#     types:
+#         - ep: 'EP'
+#         - single: 'Single'
+#         - soundtrack: 'OST'
+#         - live: 'Live'
+#         - compilation: 'Anthology'
+#         - remix: 'Remix'
+#     ignore_va: compilation
+#     bracket: '[]'
+
+# The default paths for different types of albums
+paths:
+  default: "%the{%substitute{$albumartist}}/(%if{$original_year,$original_year,$year}) %asciify{$album}%aunique{}/$track $title"
+  singleton: "%the{%substitute{$artist}}/$title%sunique{}"
+  albumtype:soundtrack albumartist:=~"Various Artists": "Soundtracks/(%if{$original_year,$original_year,$year}) %asciify{$album}%aunique{}/$track $title"
+  comp: "Compilations/(%if{$original_year,$original_year,$year}) %asciify{$album}%aunique{}/$track $title"
+
+# media::(Vinyl|Casette|VHS) blah/blah/ [$media]/ # Consider for vinyl
+
+# bitdepth samplerate
