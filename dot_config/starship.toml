@@ -43,6 +43,7 @@ read_only = " 󰌾"
 'Downloads' = ' '
 'Music' = ' '
 'Pictures' = ' '
+'Exobrain' = '󰧑 '
 
 [character]
 # Note the use of Catppuccin color 'maroon'
