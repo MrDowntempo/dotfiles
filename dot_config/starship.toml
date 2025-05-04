@@ -39,11 +39,11 @@ truncate_to_repo = false
 read_only = " 󰌾"
 
 [directory.substitutions]
-'Documents' = '󰈙'
+'Documents' = '󰈙 '
 'Downloads' = ' '
 'Music' = ' '
 'Pictures' = ' '
-'Exobrain' = '󰧑 '
+'Exobrain' = '󰧑  '
 
 [character]
 # Note the use of Catppuccin color 'maroon'
