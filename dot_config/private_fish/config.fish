@@ -9,6 +9,9 @@ abbr --add --position anywhere -- --help "--help | batcat -plhelp"
 # DOS style CLS to clear screen
 abbr --add cls clear
 
+# Debian batcat fix
+abbr --add bat batcat
+
 # for gplates on Wayland
 abbr --add gplates "QT_QPA_PLATFORM=xcb gplates"
 
