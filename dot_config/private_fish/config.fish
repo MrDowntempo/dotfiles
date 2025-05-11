@@ -9,9 +9,6 @@ abbr --add --position anywhere -- --help "--help | batcat -plhelp"
 # DOS style CLS to clear screen
 abbr --add cls clear
 
-# Debian batcat fix
-abbr --add bat batcat
-
 # for gplates on Wayland
 abbr --add gplates "QT_QPA_PLATFORM=xcb gplates"
 
@@ -136,7 +133,6 @@ end
 
 # Variable for compiling Mudlet
 # LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/corey/projects/mudlet/3rdparty/discord/rpc/lib/
-
 
 ### Old longer Fisher Plugin list
 # jorgebucaran/fisher				# Main Plugin
