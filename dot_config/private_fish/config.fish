@@ -9,9 +9,6 @@ abbr --add --position anywhere -- --help "--help | batcat -plhelp"
 # DOS style CLS to clear screen
 abbr --add cls clear
 
-# Debian's Batcat name fix
-abbr --add bat batcat
-
 # for gplates on Wayland
 abbr --add gplates "QT_QPA_PLATFORM=xcb gplates"
 
@@ -44,12 +41,6 @@ set -gx GOPATH /home/corey/go
 # Editor Environment Variables
 set -gx MICRO_TRUECOLOR 1 # Needed for Micro color themes
 set -gx EDITOR micro
-
-# nb Environment Variables (May not be necessary here.)
-# set -gx NB_DATA_TOOL visidata #sc-im and tv also supported
-# set -gx NB_DIRECTORY_TOOL eza
-# set -gx NB_IMAGE_TOOL chafa
-# set -gx NB_MARKDOWN_TOOL glow
 
 # Make sure nvim gets passed through mullvad-exclude
 # abbr --add nvim "mullvad-exclude nvim"
