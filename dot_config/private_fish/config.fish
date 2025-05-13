@@ -32,7 +32,7 @@ fish_add_path -aP ~/.local/bin
 # fish_add_path -aP ~/.bun/bin
 
 # For cargo built binaries (Couldn't get to work. Trying a plugin instead)
-# fish_add_path -a /home/corey/.cargo/bin
+# fish_add_path -a ~/.cargo/bin
 
 # More golang path stuff
 set -gx GOROOT /usr/local/go
