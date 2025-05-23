@@ -40,7 +40,7 @@ set -gx GOPATH /home/corey/go
 
 # Editor Environment Variables
 set -gx MICRO_TRUECOLOR 1 # Needed for Micro color themes
-set -gx EDITOR micro
+set -gx EDITOR hx
 
 # Make sure nvim gets passed through mullvad-exclude
 # abbr --add nvim "mullvad-exclude nvim"
@@ -55,7 +55,7 @@ set -gx EXA_LL_OPTIONS --long --all --created --modified --mounts # extra long f
 set -gx EXA_L_OPTIONS -x --icons --color=always --group-directories-first
 
 # Pager Environment Variables
-set -gx PAGER moar # because ov has issues with nb
+set -gx PAGER ov # moar as backup somethimes when ov has issues with nb
 set -gx MANROFFOPT -c # Color compatibility rendering for manpagers in ov
 set -gx MANPAGER ov --section-delimiter '^[A-Z]' --section-header
 set -gx BAT_PAGER ov -F -H3
