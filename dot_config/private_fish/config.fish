@@ -62,6 +62,9 @@ set -gx BAT_PAGER ov -F -H3
 set -gx GIT_PAGER delta
 set -gx DELTA_PAGER ov --section-delimiter '^(commit|added:|removed:|renamed:|Δ)' --section-header --pattern '•'
 
+# For libreoffice-qt6
+set -gx SAL_USE_VCLPLUGIN qt6
+
 ###### FISH PLUGIN WORKS POORLY ... CURRENTLY UNINSTALLED ################################################
 # FZF/Fzf.Fish Environment Variables (forget what these all do)
 # These 2 lines are from FD helpfile but adpated to fish
