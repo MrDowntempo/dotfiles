@@ -9,6 +9,9 @@ abbr --add --position anywhere -- --help "--help | batcat -plhelp"
 # DOS style CLS to clear screen
 abbr --add cls clear
 
+# shorten mullvad-exclude
+abbr --add m-e mullvad-exclude
+
 # for gplates on Wayland
 abbr --add gplates "QT_QPA_PLATFORM=xcb gplates"
 
@@ -68,7 +71,7 @@ set -gx SAL_USE_VCLPLUGIN qt6
 ###### FISH PLUGIN WORKS POORLY ... CURRENTLY UNINSTALLED ################################################
 # FZF/Fzf.Fish Environment Variables (forget what these all do)
 # These 2 lines are from FD helpfile but adpated to fish
-set -gx FZF_DEFAULT_COMMAND fd --type file --color=always
+set -gx FZF_DEFAULT_COMMAND fdfind --type file --color=always
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 # set -gx FZF_DEFAULT_OPTS --ansi # --ansi might slow things down here. Need to investigate
 # --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
