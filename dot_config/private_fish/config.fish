@@ -50,7 +50,7 @@ set -gx EDITOR hx
 
 # Choose editor for edit my config command
 # set --export EMC_EDITOR micro
-set --export EMC_EDITOR chezmoi edit
+# set --export EMC_EDITOR chezmoi edit
 
 # Fish-exa Environment Variables
 set -gx EXA_STANDARD_OPTIONS --icons --color=always --header --group-directories-first
