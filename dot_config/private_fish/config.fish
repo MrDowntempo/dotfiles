@@ -10,7 +10,7 @@ abbr --add --position anywhere -- --help "--help | batcat -plhelp"
 abbr --add cls clear
 
 # shorten mullvad-exclude
-abbr --add m-e mullvad-exclude
+abbr --add --position anywhere m-e mullvad-exclude
 
 # for gplates on Wayland
 abbr --add gplates "QT_QPA_PLATFORM=xcb gplates"
